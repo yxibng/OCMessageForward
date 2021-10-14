@@ -12,6 +12,11 @@
 		86B7950527158A4400E0DD4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B7950427158A4400E0DD4C /* Assets.xcassets */; };
 		86B7950827158A4400E0DD4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B7950627158A4400E0DD4C /* Main.storyboard */; };
 		86B7950A27158A4400E0DD4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B7950927158A4400E0DD4C /* main.m */; };
+		86B7951C2716C95B00E0DD4C /* Receiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B7951B2716C95B00E0DD4C /* Receiver.m */; };
+		86B7951F2716C99600E0DD4C /* Responder.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B7951E2716C99600E0DD4C /* Responder.m */; };
+		86B795222716CD8D00E0DD4C /* Resolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B795212716CD8D00E0DD4C /* Resolver.m */; };
+		86B7952C2716CEDE00E0DD4C /* Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B7952B2716CEDE00E0DD4C /* Handler.m */; };
+		86B7952F2716D4BE00E0DD4C /* AReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B7952E2716D4BE00E0DD4C /* AReceiver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,16 @@
 		86B7950727158A4400E0DD4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86B7950927158A4400E0DD4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86B7950B27158A4400E0DD4C /* test_forward.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test_forward.entitlements; sourceTree = "<group>"; };
+		86B7951A2716C95B00E0DD4C /* Receiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
+		86B7951B2716C95B00E0DD4C /* Receiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Receiver.m; sourceTree = "<group>"; };
+		86B7951D2716C99600E0DD4C /* Responder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Responder.h; sourceTree = "<group>"; };
+		86B7951E2716C99600E0DD4C /* Responder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Responder.m; sourceTree = "<group>"; };
+		86B795202716CD8D00E0DD4C /* Resolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resolver.h; sourceTree = "<group>"; };
+		86B795212716CD8D00E0DD4C /* Resolver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Resolver.m; sourceTree = "<group>"; };
+		86B7952A2716CEDE00E0DD4C /* Handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
+		86B7952B2716CEDE00E0DD4C /* Handler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Handler.m; sourceTree = "<group>"; };
+		86B7952D2716D4BE00E0DD4C /* AReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AReceiver.h; sourceTree = "<group>"; };
+		86B7952E2716D4BE00E0DD4C /* AReceiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AReceiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +71,13 @@
 		86B794FD27158A4300E0DD4C /* test-forward */ = {
 			isa = PBXGroup;
 			children = (
+				86B795232716CE4200E0DD4C /* resolve */,
+				86B795242716CE5300E0DD4C /* forwardToTarget */,
+				86B795252716CE6400E0DD4C /* forwardInvocation */,
 				86B794FE27158A4300E0DD4C /* AppDelegate.h */,
 				86B794FF27158A4300E0DD4C /* AppDelegate.m */,
+				86B7951D2716C99600E0DD4C /* Responder.h */,
+				86B7951E2716C99600E0DD4C /* Responder.m */,
 				86B7950127158A4300E0DD4C /* ViewController.h */,
 				86B7950227158A4300E0DD4C /* ViewController.m */,
 				86B7950427158A4400E0DD4C /* Assets.xcassets */,
@@ -66,6 +86,35 @@
 				86B7950B27158A4400E0DD4C /* test_forward.entitlements */,
 			);
 			path = "test-forward";
+			sourceTree = "<group>";
+		};
+		86B795232716CE4200E0DD4C /* resolve */ = {
+			isa = PBXGroup;
+			children = (
+				86B795202716CD8D00E0DD4C /* Resolver.h */,
+				86B795212716CD8D00E0DD4C /* Resolver.m */,
+			);
+			path = resolve;
+			sourceTree = "<group>";
+		};
+		86B795242716CE5300E0DD4C /* forwardToTarget */ = {
+			isa = PBXGroup;
+			children = (
+				86B7951A2716C95B00E0DD4C /* Receiver.h */,
+				86B7951B2716C95B00E0DD4C /* Receiver.m */,
+				86B7952A2716CEDE00E0DD4C /* Handler.h */,
+				86B7952B2716CEDE00E0DD4C /* Handler.m */,
+			);
+			path = forwardToTarget;
+			sourceTree = "<group>";
+		};
+		86B795252716CE6400E0DD4C /* forwardInvocation */ = {
+			isa = PBXGroup;
+			children = (
+				86B7952D2716D4BE00E0DD4C /* AReceiver.h */,
+				86B7952E2716D4BE00E0DD4C /* AReceiver.m */,
+			);
+			path = forwardInvocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B795222716CD8D00E0DD4C /* Resolver.m in Sources */,
 				86B7950327158A4300E0DD4C /* ViewController.m in Sources */,
+				86B7952F2716D4BE00E0DD4C /* AReceiver.m in Sources */,
 				86B7950A27158A4400E0DD4C /* main.m in Sources */,
+				86B7951C2716C95B00E0DD4C /* Receiver.m in Sources */,
+				86B7951F2716C99600E0DD4C /* Responder.m in Sources */,
+				86B7952C2716CEDE00E0DD4C /* Handler.m in Sources */,
 				86B7950027158A4300E0DD4C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
